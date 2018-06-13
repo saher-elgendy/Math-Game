@@ -63,7 +63,7 @@
 
         // increment the rest of time
         if(model.currentState)  model.currentTime += 3000;    
-                       
+        //check if the game should end with the current statics               
         controller.checkGameEnd();    
       },
 
@@ -72,6 +72,7 @@
       },  
 
       checkWin: () => {
+        //15 correct answers means the player wins
         if(model.currentScore === 15 && timerView.id > 0) {
           clearInterval(timerView.id)
           alert('You Win');
@@ -95,16 +96,17 @@
           setTimeout(() => controller.checkWin(), 100);
         }
       },
-
+      // our game sound
       gameSound: () => {
         this.mainMusic = new Audio('game.wav');
         this.mainMusic.volume = 0.2;
         this.mainMusic.play();    
       }
     }
-   
+    // Numbers view
     const gameView = {
         init: function() {
+           // get our components
            this.firstNumCont = document.getElementById('number1'); 
            this.secondNumCont = document.getElementById('number2');
            this.resultCont = document.getElementById('result');
@@ -112,14 +114,14 @@
            this.correctButton = document.getElementById('correct-btn');
            this.wrongButton = document.getElementById('wrong-btn');
           
-
+           // adding click events to the buttons
            this.correctButton.addEventListener('click', controller.setState);
            this.wrongButton.addEventListener('click', controller.setState); 
            // render our game numbers
            this.render();
              
         }, 
-        
+        // set the random numbers 
         render: function() {
            const randomNumbers = controller.getRandomNumber();
            this.firstNumCont.innerHTML = randomNumbers.currentNumber1;
@@ -127,19 +129,19 @@
            this.resultCont.innerHTML = randomNumbers.result;
         }   
    }
-
+   // score view
    const scoreView = {
      init: function() {
        this.scoreCont = document.getElementById('score');
-           
+       //update score  when the answer is correct   
        this.render();
-      },
-
+     },
+    // 
      render: function() {
          this.scoreCont.innerHTML = controller.incrementScore();
      }
    }  
-   
+   // timer view
    const timerView = {
      init: function() {
         this.timerCont = document.querySelector('#timing'); 
@@ -147,10 +149,10 @@
      },
 
      render:function() {
-        
+       
        this.id = setInterval(() => {
          this.timerCont.innerHTML = controller.decrementTimer();
-         // decrement time and check time end
+         // decrement time and check time end, if the time end, the game end
          if(controller.getCurrentTime() === 0 && controller.getScore() < 15) { 
              clearInterval(this.id);
              setTimeout(() => controller.gameOver(), 100);
