@@ -15,7 +15,7 @@
           scoreView.init();
           timerView.init();
       },
-
+      // generating our numbers randomly
       getRandomNumber: function() {
          
         model.currentNumber1 = Math.floor(Math.random() * 20);
@@ -54,13 +54,16 @@
       checkTrue: function() {
          return (this.getResult() === model.result);
       },
-
+      // 
       setState: (e) => {
         const target = e.target;
 
         model.currentState = (target === gameView.correctButton && controller.checkTrue()) || 
                               (target === gameView.wrongButton && !controller.checkTrue())
-        model.currentTime += 3000
+
+        // increment the rest of time
+        if(model.currentState)  model.currentTime += 3000;    
+                       
         controller.checkGameEnd();    
       },
 
@@ -77,6 +80,7 @@
       }, 
 
       gameOver: () => {
+        clearInterval(timerView.id);
         alert('Game Over');
         location.href= 'index.html'; 
       },
@@ -148,15 +152,14 @@
          this.timerCont.innerHTML = controller.decrementTimer();
         
          if(controller.getCurrentTime() === 0 && controller.getScore() < 15) {
-           
-         clearInterval(this.id);
-       
-         controller.gameOver();
+             this.timerCont.innerHTML = 0; 
+             clearInterval(this.id);   
+             controller.gameOver();
          }
        } , 50);
      
      }
    }  
-
+   // initialize our controller
    controller.init();
 })();
