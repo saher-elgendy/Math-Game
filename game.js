@@ -6,7 +6,6 @@
         currentScore: 0,
         result: 0,
         currentState: false,
-        timeRest: 0
     }
 
     const controller = {
