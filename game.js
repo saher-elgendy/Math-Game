@@ -10,10 +10,11 @@
     }
 
     const controller = {
-      init: () => {
+      init: function() {
           gameView.init();
           scoreView.init();
           timerView.init();
+          this.gameSound();
       },
       // generating our numbers randomly
       getRandomNumber: function() {
@@ -97,9 +98,9 @@
       },
 
       gameSound: () => {
-        const mainMusic = new Audio('game.wav');
-        mainMusic.volume = 0.2;
-        mainMusic.play();    
+        this.mainMusic = new Audio('game.wav');
+        this.mainMusic.volume = 0.2;
+        this.mainMusic.play();    
       }
     }
 
@@ -152,7 +153,7 @@
          this.timerCont.innerHTML = controller.decrementTimer();
          // decrement time and check time end
          if(controller.getCurrentTime() === 0 && controller.getScore() < 15) { 
-             clearInterval(this.id);   
+             clearInterval(this.id);
              setTimeout(() => controller.gameOver(), 100);
          }
        } , 50);
