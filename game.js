@@ -103,7 +103,7 @@
         this.mainMusic.play();    
       }
     }
-
+   
     const gameView = {
         init: function() {
            this.firstNumCont = document.getElementById('number1'); 
@@ -116,7 +116,7 @@
 
            this.correctButton.addEventListener('click', controller.setState);
            this.wrongButton.addEventListener('click', controller.setState); 
-           
+           // render our game numbers
            this.render();
              
         }, 
