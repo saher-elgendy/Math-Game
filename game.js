@@ -63,7 +63,7 @@
 
         // increment the rest of time
         if(model.currentState)  model.currentTime += 3000;    
-        //check if the game should end with the current stats               
+        //check if the game should end with the current states               
         controller.checkGameEnd();    
       },
 
