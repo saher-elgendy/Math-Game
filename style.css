@@ -1,0 +1,40 @@
+body{
+    background: #E3E3E3;
+}
+
+#startMenu{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+#start{
+    margin: auto;
+}
+#chooseNumbers{
+
+    margin-top: 200px;
+    width: 100%;
+    text-align: center;
+}
+#chooseButtons{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+
+.btn{
+    display: inline-block;
+}
+
+#result {
+    text-align: center;
+}
+
+#timing{
+    text-align: right;
+}

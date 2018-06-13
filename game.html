@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math Game</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo" id="timing">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="sass.html">Open from mobile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="left">
+    <a class="btn-floating btn-large red" id="score">0</a>
+</div>
+
+<div id="chooseNumbers">
+    <h1>
+        <span id="number1">0</span> +
+        <span id="number2">0</span>
+    </h1>
+</div>
+<div>
+    <h1 id="result">0</h1>
+</div>
+<div id="chooseButtons">
+    <a id="correct-btn" class="waves-effect waves-light btn-large">
+        <i class="material-icons left">check_circle</i>Correct</a>
+    <a id="wrong-btn" class="waves-effect waves-light btn-large red">
+        <i class="material-icons right">clear</i>Wrong</a>
+</div>
+
+
+
+<!-- Modal Structure -->
+<div id="gameOver" class="modal">
+    <div class="modal-content">
+        <h4>Game Over</h4>
+        <p>Your Answer was wrong</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
+    </div>
+</div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="game.js"></script>
+</body>
+
+</html>
