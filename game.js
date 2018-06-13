@@ -150,11 +150,10 @@
         
        this.id = setInterval(() => {
          this.timerCont.innerHTML = controller.decrementTimer();
-        
-         if(controller.getCurrentTime() === 0 && controller.getScore() < 15) {
-             this.timerCont.innerHTML = 0; 
+         // decrement time and check time end
+         if(controller.getCurrentTime() === 0 && controller.getScore() < 15) { 
              clearInterval(this.id);   
-             controller.gameOver();
+             setTimeout(() => controller.gameOver(), 100);
          }
        } , 50);
      
