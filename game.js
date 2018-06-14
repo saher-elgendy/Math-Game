@@ -74,7 +74,7 @@
 
       checkWin: () => {
         //15 correct answers means the player wins
-        if(model.currentScore === 15 && timerView.id > 0) {
+        if(model.currentScore === 15) {
           clearInterval(timerView.id)
           alert('You Win');
           location.href= 'index.html'; 
