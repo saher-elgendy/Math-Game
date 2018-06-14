@@ -2,10 +2,10 @@
     const model = {
         currentNumber1: 0,
         currentNumber2: 0,
-        currentTime: 3000,
+        currentTime: 10000,
         currentScore: 0,
         result: 0,
-        currentState: false,
+        currentState: false
     }
 
     const controller = {
@@ -42,6 +42,7 @@
 
       incrementScore: function() {
          if(model.currentState) model.currentScore += 1;
+
          this.changeQuiz();
 
          return this.getScore();
@@ -62,7 +63,7 @@
                               (target === gameView.wrongButton && !controller.checkTrue())
 
         // increment the rest of time
-        if(model.currentState)  model.currentTime += 3000;    
+        if(model.currentState)  model.currentTime += 10000;    
         //check if the game should end with the current states               
         controller.checkGameEnd();    
       },
