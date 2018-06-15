@@ -99,9 +99,9 @@
       },
       // our game sound
       gameSound: () => {
-        this.mainMusic = new Audio('game.wav');
-        this.mainMusic.volume = 0.2;
-        this.mainMusic.play();    
+       const mainMusic = new Audio('game.wav');
+       mainMusic.volume = 0.2;
+       mainMusic.play();    
       }
     }
     // Numbers view
